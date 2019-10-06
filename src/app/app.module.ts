@@ -9,6 +9,8 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +19,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    StoreModule.forRoot(reducers, { metaReducers })
   ],
   providers: [
     StatusBar,
